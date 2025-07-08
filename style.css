@@ -1,0 +1,131 @@
+/* Universal reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Netflix-style background */
+body {
+  font-family: 'Arial', sans-serif;
+  background-image: url("netflix\ bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+  text-align: center;
+  padding: 40px;
+  min-height: 100vh;
+}
+
+/* Overlay for better readability */
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  z-index: 1;
+}
+
+input {
+  padding: 10px 20px;
+  width: 60%;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+}
+
+button {
+  padding: 10px 20px;
+  color: white;
+  background-color: crimson;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #e50914;
+}
+
+.loader {
+  border: 5px solid rgba(255, 255, 255, 0.2);
+  border-top: 5px solid crimson;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 20px auto;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+#movie-details {
+  display: flex;
+  flex-wrap: wrap; /* Allows it to stack only on small screens */
+  align-items: flex-start;
+  gap: 20px;
+  margin-top: 20px;
+  overflow: hidden;
+  padding: 20px;
+  border-radius: 10px;
+
+  /* Glassmorphism styles */
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  /* NEW: fix layout */
+  justify-content: center;
+}
+
+
+#movie-details img:hover {
+  transform: scale(1.05); /* ✅ NEW: zoom effect */
+}
+
+#movie-details img {
+  width: 200px;
+  max-width: 100%;
+  flex-shrink: 0;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+
+#movie-details div {
+  flex: 1;
+  min-width: 250px;
+}
+
+
+/* Trailer button */
+.trailer-btn {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #e50914;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.trailer-btn:hover {
+  background-color: #b0060f;
+}
